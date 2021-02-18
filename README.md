@@ -1,62 +1,72 @@
-# FreeCodeCamp
-Exercises and Projects
+Return true if the passed string looks like a valid US phone number.
 
-Exercises and Projects
+The user may fill out the form field any way they choose as long as it has the 
+format of a valid US number. The following are examples of valid formats for US 
+numbers (refer to the tests below for other variants):
 
-Roman Numeral Converter Convert the given number into a roman numeral.
+555-555-5555
+(555)555-5555
+(555) 555-5555
+555 555 5555
+5555555555
+1 555 555 5555
+For this challenge you will be presented with a string such as 800-692-7753 or 
+8oo-six427676;laskdjf. Your job is to validate or reject the US phone number 
+based on any combination of the formats provided above. The area code is 
+required. If the country code is provided, you must confirm that the country 
+code is 1. Return true if the string is a valid US phone number; otherwise 
+return false..
 
-All roman numerals answers should be provided in upper-case.
+telephoneCheck("555-555-5555") should return a boolean.
 
-Tests
+telephoneCheck("1 555-555-5555") should return true.
 
-convertToRoman(2) should return "II".
+telephoneCheck("1 (555) 555-5555") should return true.
 
-convertToRoman(3) should return "III".
+telephoneCheck("5555555555") should return true.
 
-convertToRoman(4) should return "IV".
+telephoneCheck("555-555-5555") should return true.
 
-convertToRoman(5) should return "V".
+telephoneCheck("(555)555-5555") should return true.
 
-convertToRoman(9) should return "IX".
+telephoneCheck("1(555)555-5555") should return true.
 
-convertToRoman(12) should return "XII".
+telephoneCheck("555-5555") should return false.
 
-convertToRoman(16) should return "XVI".
+telephoneCheck("5555555") should return false.
 
-convertToRoman(29) should return "XXIX".
+telephoneCheck("1 555)555-5555") should return false.
 
-convertToRoman(44) should return "XLIV".
+telephoneCheck("1 555 555 5555") should return true.
 
-convertToRoman(45) should return "XLV"
+telephoneCheck("1 456 789 4444") should return true.
 
-convertToRoman(68) should return "LXVIII"
+telephoneCheck("123**&!!asdf#") should return false.
 
-convertToRoman(83) should return "LXXXIII"
+telephoneCheck("55555555") should return false.
 
-convertToRoman(97) should return "XCVII"
+telephoneCheck("(6054756961)") should return false
 
-convertToRoman(99) should return "XCIX"
+telephoneCheck("2 (757) 622-7382") should return false.
 
-convertToRoman(400) should return "CD"
+telephoneCheck("0 (757) 622-7382") should return false.
 
-convertToRoman(500) should return "D"
+telephoneCheck("-1 (757) 622-7382") should return false
 
-convertToRoman(501) should return "DI"
+telephoneCheck("2 757 622-7382") should return false.
 
-convertToRoman(649) should return "DCXLIX"
+telephoneCheck("10 (757) 622-7382") should return false.
 
-convertToRoman(798) should return "DCCXCVIII"
+telephoneCheck("27576227382") should return false.
 
-convertToRoman(891) should return "DCCCXCI"
+telephoneCheck("(275)76227382") should return false.
 
-convertToRoman(1000) should return "M"
+telephoneCheck("2(757)6227382") should return false.
 
-convertToRoman(1004) should return "MIV"
+telephoneCheck("2(757)622-7382") should return false.
 
-convertToRoman(1006) should return "MVI"
+telephoneCheck("555)-555-5555") should return false.
 
-convertToRoman(1023) should return "MXXIII"
+telephoneCheck("(555-555-5555") should return false.
 
-convertToRoman(2014) should return "MMXIV"
-
-convertToRoman(3999) should return "MMMCMXCIX"
+telephoneCheck("(555)5(55?)-5555") should return false.
