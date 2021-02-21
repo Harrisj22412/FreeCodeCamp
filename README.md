@@ -1,62 +1,42 @@
-# FreeCodeCamp
-Exercises and Projects
+Cash Register
+Design a cash register drawer function checkCashRegister() that accepts 
+purchase price as the first argument (price), payment as the second argument 
+(cash), and cash-in-drawer (cid) as the third argument.
 
+cid is a 2D array listing available currency.
 
-Roman Numeral Converter
-Convert the given number into a roman numeral.
+The checkCashRegister() function should always return an object with a status 
+key and a change key.
 
-All roman numerals answers should be provided in upper-case.
+Return {status: "INSUFFICIENT_FUNDS", change: []} if cash-in-drawer is less 
+than the change due, or if you cannot return the exact change.
 
-Tests
+Return {status: "CLOSED", change: [...]} with cash-in-drawer as the value for 
+the key change if it is equal to the change due.
 
-convertToRoman(2) should return "II".
+Otherwise, return {status: "OPEN", change: [...]}, with the change due in coins
+and bills, sorted in highest to lowest order, as the value of the change key.
 
-convertToRoman(3) should return "III".
+Currency Unit	Amount
+Penny	$0.01 (PENNY)
+Nickel	$0.05 (NICKEL)
+Dime	$0.1 (DIME)
+Quarter	$0.25 (QUARTER)
+Dollar	$1 (ONE)
+Five Dollars	$5 (FIVE)
+Ten Dollars	$10 (TEN)
+Twenty Dollars	$20 (TWENTY)
+One-hundred Dollars	$100 (ONE HUNDRED)
+See below for an example of a cash-in-drawer array:
 
-convertToRoman(4) should return "IV".
-
-convertToRoman(5) should return "V".
-
-convertToRoman(9) should return "IX".
-
-convertToRoman(12) should return "XII".
-
-convertToRoman(16) should return "XVI".
-
-convertToRoman(29) should return "XXIX".
-
-convertToRoman(44) should return "XLIV".
-
-convertToRoman(45) should return "XLV"
-
-convertToRoman(68) should return "LXVIII"
-
-convertToRoman(83) should return "LXXXIII"
-
-convertToRoman(97) should return "XCVII"
-
-convertToRoman(99) should return "XCIX"
-
-convertToRoman(400) should return "CD"
-
-convertToRoman(500) should return "D"
-
-convertToRoman(501) should return "DI"
-
-convertToRoman(649) should return "DCXLIX"
-
-convertToRoman(798) should return "DCCXCVIII"
-
-convertToRoman(891) should return "DCCCXCI"
-
-convertToRoman(1000) should return "M"
-
-convertToRoman(1004) should return "MIV"
-
-convertToRoman(1006) should return "MVI"
-
-convertToRoman(1023) should return "MXXIII"
-
-convertToRoman(2014) should return "MMXIV"
-
-convertToRoman(3999) should return "MMMCMXCIX"
+[
+  ["PENNY", 1.01],
+  ["NICKEL", 2.05],
+  ["DIME", 3.1],
+  ["QUARTER", 4.25],
+  ["ONE", 90],
+  ["FIVE", 55],
+  ["TEN", 20],
+  ["TWENTY", 60],
+  ["ONE HUNDRED", 100]
+]
