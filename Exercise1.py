@@ -15,7 +15,7 @@ print(hasRepeatNums(numlist))
 #will end at 9 but not include 9
 
 #i = 0, j = 1, element at index 0 is 3 and element at index j is 5, 
-#i = 0, j= 2, element at index 0 is 3 amd ele,emt at index j is 7,
+#i = 0, j= 2, element at index 0 is 3 amd element at index j is 7,
 #i = 0, j=3, element at index 0 is 
 # i = 0, j=8, element at index 0 is 3 and element at index j is 7
                 
